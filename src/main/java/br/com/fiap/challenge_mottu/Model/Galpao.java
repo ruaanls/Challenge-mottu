@@ -1,7 +1,15 @@
 package br.com.fiap.challenge_mottu.Model;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "galpao")
 public class Galpao
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String logradouro;
     private String numero;
@@ -9,7 +17,8 @@ public class Galpao
     private String cidade;
     private String nome;
     private int capacidade_max;
-    private int capacidade_atual;
+    @OneToMany(mappedBy = "galpao", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Area> areas;
 
 
     public Long getId() {
@@ -68,11 +77,5 @@ public class Galpao
         this.capacidade_max = capacidade_max;
     }
 
-    public int getCapacidade_atual() {
-        return capacidade_atual;
-    }
 
-    public void setCapacidade_atual(int capacidade_atual) {
-        this.capacidade_atual = capacidade_atual;
-    }
 }

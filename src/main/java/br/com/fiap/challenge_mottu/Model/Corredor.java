@@ -1,12 +1,20 @@
 package br.com.fiap.challenge_mottu.Model;
 
-import java.util.List;
+import jakarta.persistence.*;
 
+import java.util.List;
+@Entity
+@Table(name = "corredores")
 public class Corredor
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_area", nullable = false)
     private Area area;
     private String nomeCorredor;
+    @OneToMany(mappedBy = "corredor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Vagas> vagasList;
 
     public Long getId() {

@@ -1,13 +1,19 @@
 package br.com.fiap.challenge_mottu.Model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "motos")
 public class Moto
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String placa;
     private String modelo;
     private String marca;
     private int ano;
-
+    @OneToOne(mappedBy = "motoOcupante", fetch = FetchType.LAZY)
     private Vagas vaga;
 
     public Long getId() {
