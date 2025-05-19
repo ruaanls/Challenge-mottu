@@ -8,20 +8,20 @@ public class Moto
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_moto;
     private String placa;
     private String modelo;
     private String marca;
     private int ano;
-    @OneToOne(mappedBy = "motoOcupante", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "moto", fetch = FetchType.LAZY)
     private Vagas vaga;
 
-    public Long getId() {
-        return id;
+    public Long getId_moto() {
+        return id_moto;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_moto(Long id_moto) {
+        this.id_moto = id_moto;
     }
 
     public String getPlaca() {
