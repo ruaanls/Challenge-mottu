@@ -13,8 +13,7 @@ public class Moto
     private String modelo;
     private String marca;
     private int ano;
-    @OneToOne(mappedBy = "moto", fetch = FetchType.LAZY)
-    private Vagas vaga;
+
 
     public Long getId_moto() {
         return id_moto;
@@ -58,11 +57,5 @@ public class Moto
 
 
 
-    public Vagas getVaga() {
-        return vaga;
-    }
 
-    public void setVaga(Vagas vaga) {
-        this.vaga = vaga;
-    }
 }

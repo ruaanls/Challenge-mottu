@@ -1,5 +1,9 @@
 package br.com.fiap.challenge_mottu.DTO;
 
+import br.com.fiap.challenge_mottu.Model.Area;
+
+import java.util.List;
+
 public class GalpaoRequest
 {
     private String nome;
@@ -8,6 +12,15 @@ public class GalpaoRequest
     private String estado;
     private String cidade;
     private int capacidade_max;
+    private List<Area> areas;
+
+    public List<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
+    }
 
     public String getNome() {
         return nome;

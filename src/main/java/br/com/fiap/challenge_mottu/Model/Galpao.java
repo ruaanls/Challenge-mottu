@@ -77,5 +77,11 @@ public class Galpao
         this.capacidade_max = capacidade_max;
     }
 
+    public List<Area> getAreas() {
+        return areas;
+    }
 
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
+    }
 }
