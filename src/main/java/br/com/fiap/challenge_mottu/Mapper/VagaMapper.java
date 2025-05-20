@@ -27,6 +27,7 @@ public class VagaMapper
         VagaResponse vagaResponse = new VagaResponse();
         vagaResponse.setStatus(vagaResponse.isStatus());
         vagaResponse.setCodigoVaga(vaga.getCodigoVaga());
+
         return vagaResponse;
     }
 }
