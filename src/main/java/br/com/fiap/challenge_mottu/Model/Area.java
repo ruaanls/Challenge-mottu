@@ -61,5 +61,11 @@ public class Area
         this.capacidade_max = capacidade_max;
     }
 
+    public List<Corredor> getCorredores() {
+        return corredores;
+    }
 
+    public void setCorredores(Corredor corredores) {
+        this.corredores.add(corredores);
+    }
 }

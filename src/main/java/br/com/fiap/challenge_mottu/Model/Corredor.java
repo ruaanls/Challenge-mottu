@@ -37,7 +37,16 @@ public class Corredor
         return nomeCorredor;
     }
 
+
     public void setNomeCorredor(String nomeCorredor) {
         this.nomeCorredor = nomeCorredor;
+    }
+
+    public List<Vagas> getVagasList() {
+        return vagasList;
+    }
+
+    public void setVagasList(Vagas vagasList) {
+        this.vagasList.add(vagasList);
     }
 }

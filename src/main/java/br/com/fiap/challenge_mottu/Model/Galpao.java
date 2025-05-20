@@ -81,7 +81,7 @@ public class Galpao
         return areas;
     }
 
-    public void setAreas(List<Area> areas) {
-        this.areas = areas;
+    public void setAreas(Area areas) {
+        this.areas.add(areas);
     }
 }

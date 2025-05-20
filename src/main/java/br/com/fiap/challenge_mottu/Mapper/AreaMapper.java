@@ -20,7 +20,7 @@ public class AreaMapper
         return area;
     }
 
-    public AreaResponse areaToRequest(Area area)
+    public AreaResponse areaToResponse(Area area)
     {
         if(area == null)
         {

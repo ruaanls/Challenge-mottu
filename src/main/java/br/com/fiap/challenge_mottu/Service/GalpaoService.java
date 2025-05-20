@@ -3,7 +3,10 @@ package br.com.fiap.challenge_mottu.Service;
 import br.com.fiap.challenge_mottu.DTO.GalpaoRequest;
 import br.com.fiap.challenge_mottu.DTO.GalpaoResponse;
 import br.com.fiap.challenge_mottu.Mapper.GalpaoMapper;
+import br.com.fiap.challenge_mottu.Model.Area;
+import br.com.fiap.challenge_mottu.Model.Corredor;
 import br.com.fiap.challenge_mottu.Model.Galpao;
+import br.com.fiap.challenge_mottu.Model.Vagas;
 import br.com.fiap.challenge_mottu.Repository.GalpaoRepository;
 
 public class GalpaoService
@@ -21,8 +24,7 @@ public class GalpaoService
     {
         Galpao galpao = new Galpao();
         galpao = galpaoMapper.requestToGalpao(galpaoRequest);
-        galpao.setAreas(galpaoRequest.getAreas());
-        galpaoRepository.save(galpao);
-        return galpaoMapper.galpaoToResponse(galpao);
+        Galpao galpaoSalvo = galpaoRepository.save(galpao);
+        return galpaoMapper.galpaoToResponse(galpaoSalvo);
     }
 }
