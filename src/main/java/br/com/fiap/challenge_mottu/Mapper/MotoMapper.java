@@ -31,6 +31,8 @@ public class MotoMapper
         motoResponse.setMarca(moto.getMarca());
         motoResponse.setModelo(moto.getModelo());
         motoResponse.setPlaca(moto.getPlaca());
+        motoResponse.setVaga(moto.getVaga().getCodigoVaga());
+        motoResponse.setCorredor(moto.getVaga().getCorredor().getNomeCorredor());
         return motoResponse;
     }
 }

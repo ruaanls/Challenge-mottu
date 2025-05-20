@@ -83,5 +83,6 @@ public class Galpao
 
     public void setAreas(Area areas) {
         this.areas.add(areas);
+
     }
 }

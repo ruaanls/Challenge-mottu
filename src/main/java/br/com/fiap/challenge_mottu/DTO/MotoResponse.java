@@ -8,6 +8,8 @@ public class MotoResponse
     private String modelo;
     private String marca;
     private int ano;
+    private String Vaga;
+    private String Corredor;
 
 
     public String getPlaca() {
@@ -42,5 +44,19 @@ public class MotoResponse
         this.ano = ano;
     }
 
+    public String getVaga() {
+        return Vaga;
+    }
 
+    public void setVaga(String vaga) {
+        Vaga = vaga;
+    }
+
+    public String getCorredor() {
+        return Corredor;
+    }
+
+    public void setCorredor(String corredor) {
+        Corredor = corredor;
+    }
 }

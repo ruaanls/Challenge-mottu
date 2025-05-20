@@ -4,7 +4,8 @@ public class VagaResponse
 {
     private String codigoVaga;
     private boolean status;
-    private MotoResponse motoResponse;
+    private Long id_moto;
+    private String corredor;
 
     public String getCodigoVaga() {
         return codigoVaga;
@@ -22,11 +23,19 @@ public class VagaResponse
         this.status = status;
     }
 
-    public MotoResponse getMotoResponse() {
-        return motoResponse;
+    public Long getId_moto() {
+        return id_moto;
     }
 
-    public void setMotoResponse(MotoResponse motoResponse) {
-        this.motoResponse = motoResponse;
+    public void setId_moto(Long id_moto) {
+        this.id_moto = id_moto;
+    }
+
+    public String getCorredor() {
+        return corredor;
+    }
+
+    public void setCorredor(String corredor) {
+        this.corredor = corredor;
     }
 }

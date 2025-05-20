@@ -15,6 +15,8 @@ public class VagaMapper
 
         Vagas vaga = new Vagas();
         vaga.setCodigoVaga(vagaRequest.getCodigoVaga());
+        vaga.setStatus(false);
+        vaga.setMoto(null);
         return vaga;
     }
 
@@ -27,7 +29,8 @@ public class VagaMapper
         VagaResponse vagaResponse = new VagaResponse();
         vagaResponse.setStatus(vagaResponse.isStatus());
         vagaResponse.setCodigoVaga(vaga.getCodigoVaga());
-
+        vagaResponse.setId_moto(vaga.getMoto().getId_moto());
+        vagaResponse.setCorredor(vaga.getCorredor().getNomeCorredor());
         return vagaResponse;
     }
 }

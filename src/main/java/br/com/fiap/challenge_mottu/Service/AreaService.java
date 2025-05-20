@@ -31,8 +31,9 @@ public class AreaService
                 .orElseThrow(() -> new EntityNotFoundException("Galpão com ID " + areaRequest.getGalpaoId() + " não encontrado."));
         Area area = areaMapper.requestToArea(areaRequest);
         area.setGalpao(galpao);
-
+        galpao.setAreas(area);
         Area areaSalva = areaRepository.save(area);
+        // Se fosse no oracle teriamos que sobreescrever
         return areaMapper.areaToResponse(areaSalva);
     }
 

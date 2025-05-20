@@ -29,6 +29,7 @@ public class CorredorService
         Area area = areaRepository.findById(corredorRequest.getIdArea())
                 .orElseThrow( () -> new EntityNotFoundException("Área não encontrada"));
         corredor.setArea(area);
+        area.setCorredores(corredor); // Atualiza automaticamente o objeto área no banco de dados
         Corredor corredorSalvo = corredorRepository.save(corredor);
         return corredorMapper.corredorToResponse(corredorSalvo);
 

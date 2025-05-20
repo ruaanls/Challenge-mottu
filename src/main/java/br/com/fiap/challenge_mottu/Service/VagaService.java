@@ -23,15 +23,22 @@ public class VagaService
 
     public VagaResponse createVaga (VagaRequest vagaRequest)
     {
-        Corredor corredor = corredorRepository.findById(vagaRequest.getIdCorredor()).orElseThrow(() -> new EntityNotFoundException ("Corredor não encontrado"));
         Vagas vagas = vagaMapper.requestToVagas(vagaRequest);
-        vagas.setMoto(null);
-        vagas.setStatus(true);
-        vagas.setCorredor(corredor);
-        corredor.setVagasList(vagas);
+        Corredor corredor = corredorRepository.findById(vagaRequest.getIdCorredor())
+                .orElseThrow(() -> new EntityNotFoundException ("Corredor não encontrado"));
+
+        vagas.setCorredor(corredor); // Adiciona o objeto corredor a vagas
+        corredor.setVagasList(vagas); // Atualiza o objeto corredor com uma vaga no banco de dados
         Vagas vagaSalva = vagaRepository.save(vagas);
         return vagaMapper.vagaToResponse(vagaSalva);
 
+    }
+
+    public VagaResponse readVaga(VagaRequest vagaRequest)
+    {
+        Vagas vaga = vagaRepository.findById(vagaRequest.getIdVaga())
+                .orElseThrow(()->new EntityNotFoundException ("Vaga não encontrada"));
+        return vagaMapper.vagaToResponse(vaga);
     }
 
 
