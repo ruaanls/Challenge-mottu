@@ -3,7 +3,9 @@ package br.com.fiap.challenge_mottu.Mapper;
 import br.com.fiap.challenge_mottu.DTO.VagaRequest;
 import br.com.fiap.challenge_mottu.DTO.VagaResponse;
 import br.com.fiap.challenge_mottu.Model.Vagas;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VagaMapper
 {
     public Vagas requestToVagas(VagaRequest vagaRequest)
@@ -27,9 +29,13 @@ public class VagaMapper
             return null;
         }
         VagaResponse vagaResponse = new VagaResponse();
+        vagaResponse.setIdVaga(vaga.getId());
         vagaResponse.setStatus(vagaResponse.isStatus());
         vagaResponse.setCodigoVaga(vaga.getCodigoVaga());
-        vagaResponse.setId_moto(vaga.getMoto().getId_moto());
+        if(vaga.getMoto() != null)
+        {
+            vagaResponse.setId_moto(vaga.getMoto().getId_moto());
+        }
         vagaResponse.setCorredor(vaga.getCorredor().getNomeCorredor());
         return vagaResponse;
     }

@@ -2,6 +2,7 @@ package br.com.fiap.challenge_mottu.DTO;
 
 public class VagaResponse
 {
+    private Long idVaga;
     private String codigoVaga;
     private boolean status;
     private Long id_moto;
@@ -37,5 +38,13 @@ public class VagaResponse
 
     public void setCorredor(String corredor) {
         this.corredor = corredor;
+    }
+
+    public Long getIdVaga() {
+        return idVaga;
+    }
+
+    public void setIdVaga(Long idVaga) {
+        this.idVaga = idVaga;
     }
 }

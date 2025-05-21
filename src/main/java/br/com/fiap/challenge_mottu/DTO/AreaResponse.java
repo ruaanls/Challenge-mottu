@@ -6,10 +6,18 @@ import java.util.List;
 
 public class AreaResponse
 {
+    private Long idArea;
     private String nome;
     private TipoArea tipoArea;
     private int capacidade_max;
-    private List<CorredorResponse> corredores;
+
+    public Long getIdArea() {
+        return idArea;
+    }
+
+    public void setIdArea(Long idArea) {
+        this.idArea = idArea;
+    }
 
     public String getNome() {
         return nome;
@@ -35,11 +43,5 @@ public class AreaResponse
         this.capacidade_max = capacidade_max;
     }
 
-    public List<CorredorResponse> getCorredores() {
-        return corredores;
-    }
 
-    public void setCorredores(List<CorredorResponse> corredores) {
-        this.corredores = corredores;
-    }
 }

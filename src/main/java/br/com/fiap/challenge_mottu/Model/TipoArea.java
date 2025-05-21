@@ -2,8 +2,8 @@ package br.com.fiap.challenge_mottu.Model;
 
 public enum TipoArea
 {
-    SEMDEFEITO("Motos Sem defeito"),
-    COMDEFEITO("Motos com defeito");
+    NOVA("Motos Sem defeito"),
+    DEFEITO("Motos com defeito");
 
     private String descricao;
 

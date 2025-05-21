@@ -2,19 +2,13 @@ package br.com.fiap.challenge_mottu.DTO;
 
 public class VagaRequest
 {
-    private Long idVaga;
+
     private Long idCorredor;
     private String codigoVaga;
     private boolean status;
     private Long idMoto;
 
-    public Long getIdVaga() {
-        return idVaga;
-    }
 
-    public void setIdVaga(Long idVaga) {
-        this.idVaga = idVaga;
-    }
 
     public Long getIdCorredor() {
         return idCorredor;

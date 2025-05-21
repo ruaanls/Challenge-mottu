@@ -8,7 +8,9 @@ import br.com.fiap.challenge_mottu.Model.Vagas;
 import br.com.fiap.challenge_mottu.Repository.CorredorRepository;
 import br.com.fiap.challenge_mottu.Repository.VagaRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VagaService
 {
     private final VagaRepository vagaRepository;
@@ -34,9 +36,9 @@ public class VagaService
 
     }
 
-    public VagaResponse readVaga(VagaRequest vagaRequest)
+    public VagaResponse readVaga(Long id)
     {
-        Vagas vaga = vagaRepository.findById(vagaRequest.getIdVaga())
+        Vagas vaga = vagaRepository.findById(id)
                 .orElseThrow(()->new EntityNotFoundException ("Vaga não encontrada"));
         return vagaMapper.vagaToResponse(vaga);
     }

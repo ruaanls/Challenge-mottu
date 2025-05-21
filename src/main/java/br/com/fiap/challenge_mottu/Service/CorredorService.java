@@ -8,7 +8,9 @@ import br.com.fiap.challenge_mottu.Model.Corredor;
 import br.com.fiap.challenge_mottu.Repository.AreaRepository;
 import br.com.fiap.challenge_mottu.Repository.CorredorRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CorredorService
 {
     private final CorredorRepository corredorRepository;
@@ -29,6 +31,7 @@ public class CorredorService
         Area area = areaRepository.findById(corredorRequest.getIdArea())
                 .orElseThrow( () -> new EntityNotFoundException("Área não encontrada"));
         corredor.setArea(area);
+
         area.setCorredores(corredor); // Atualiza automaticamente o objeto área no banco de dados
         Corredor corredorSalvo = corredorRepository.save(corredor);
         return corredorMapper.corredorToResponse(corredorSalvo);

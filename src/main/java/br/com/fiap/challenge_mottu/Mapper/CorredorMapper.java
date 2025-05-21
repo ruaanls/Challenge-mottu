@@ -3,7 +3,9 @@ package br.com.fiap.challenge_mottu.Mapper;
 import br.com.fiap.challenge_mottu.DTO.CorredorRequest;
 import br.com.fiap.challenge_mottu.DTO.CorredorResponse;
 import br.com.fiap.challenge_mottu.Model.Corredor;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CorredorMapper
 {
     // TALVEZ PRECISE DO ARRAY DE VAGAS NO CORREDOR MODEL
@@ -15,7 +17,7 @@ public class CorredorMapper
         }
 
         Corredor corredor = new Corredor();
-        corredor.setNomeCorredor(corredor.getNomeCorredor());
+        corredor.setNomeCorredor(corredorRequest.getNome_corredor());
         return corredor;
     }
 
@@ -27,6 +29,7 @@ public class CorredorMapper
         }
         CorredorResponse corredorResponse = new CorredorResponse();
         corredorResponse.setNomeCorredor(corredor.getNomeCorredor());
+        corredorResponse.setIdCorredor(corredor.getId());
         return corredorResponse;
     }
 }

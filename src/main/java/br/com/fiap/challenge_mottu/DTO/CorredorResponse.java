@@ -6,8 +6,9 @@ import java.util.List;
 
 public class CorredorResponse
 {
+    private Long idCorredor;
     private String nomeCorredor;
-    private List<VagaResponse> vagas;
+
 
     public String getNomeCorredor() {
         return nomeCorredor;
@@ -17,11 +18,11 @@ public class CorredorResponse
         this.nomeCorredor = nomeCorredor;
     }
 
-    public List<VagaResponse> getVagas() {
-        return vagas;
+    public Long getIdCorredor() {
+        return idCorredor;
     }
 
-    public void setVagas(List<VagaResponse> vagas) {
-        this.vagas = vagas;
+    public void setIdCorredor(Long idCorredor) {
+        this.idCorredor = idCorredor;
     }
 }

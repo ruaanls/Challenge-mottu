@@ -3,7 +3,9 @@ package br.com.fiap.challenge_mottu.Mapper;
 import br.com.fiap.challenge_mottu.DTO.GalpaoRequest;
 import br.com.fiap.challenge_mottu.DTO.GalpaoResponse;
 import br.com.fiap.challenge_mottu.Model.Galpao;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GalpaoMapper
 {
     public Galpao requestToGalpao(GalpaoRequest galpaoRequest)
@@ -31,8 +33,10 @@ public class GalpaoMapper
 
         GalpaoResponse galpaoResponse = new GalpaoResponse();
         galpaoResponse.setLogradouro(galpao.getLogradouro());
-        galpaoResponse.setNome(galpaoResponse.getNome());
-        galpaoResponse.setNumero(galpaoResponse.getNumero());
+        galpaoResponse.setNome(galpao.getNome());
+        galpaoResponse.setNumero(galpao.getNumero());
+        galpaoResponse.setIdGalpao(galpao.getId());
+        galpaoResponse.setCapacidadeMax(galpao.getCapacidade_max());
         return galpaoResponse;
     }
 }

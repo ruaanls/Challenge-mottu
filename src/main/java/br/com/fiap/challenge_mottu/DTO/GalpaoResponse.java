@@ -4,10 +4,12 @@ import java.util.List;
 
 public class GalpaoResponse
 {
+    private Long idGalpao;
     private String nome;
     private String logradouro;
-    private int numero;
-    private List<CorredorResponse> corredores;
+    private String numero;
+    private int capacidadeMax;
+
 
     public String getNome() {
         return nome;
@@ -25,19 +27,28 @@ public class GalpaoResponse
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public List<CorredorResponse> getCorredores() {
-        return corredores;
+    public Long getIdGalpao() {
+        return idGalpao;
     }
 
-    public void setCorredores(List<CorredorResponse> corredores) {
-        this.corredores = corredores;
+    public void setIdGalpao(Long idGalpao) {
+        this.idGalpao = idGalpao;
+    }
+
+    public int getCapacidadeMax() {
+        return capacidadeMax;
+    }
+
+    public void setCapacidadeMax(int capacidadeMax) {
+        this.capacidadeMax = capacidadeMax;
     }
 }

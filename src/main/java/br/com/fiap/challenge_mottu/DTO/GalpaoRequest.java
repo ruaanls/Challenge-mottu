@@ -1,26 +1,29 @@
 package br.com.fiap.challenge_mottu.DTO;
 
 import br.com.fiap.challenge_mottu.Model.Area;
+import jakarta.validation.constraints.*;
 
 import java.util.List;
 
 public class GalpaoRequest
 {
+    @NotBlank(message = "O galpão não pode ficar sem nome")
+    @Size(min = 2, max = 254, message = "O título deve ter entre 2 e 254 caracteres")
     private String nome;
+    @NotNull(message = "O logradouro para um galpão é obrigatório")
     private String logradouro;
+    @NotNull(message = "É obrigatório um galpão ter número")
     private String numero;
+    @NotNull(message = "O galpão precisa estar em um estado")
     private String estado;
+    @NotNull(message = "O galpão precisa estar em uma cidade")
     private String cidade;
+    @NotNull(message = "O galpão deve ter uma capacidade máxima")
+
     private int capacidade_max;
-    private List<Area> areas;
 
-    public List<Area> getAreas() {
-        return areas;
-    }
 
-    public void setAreas(List<Area> areas) {
-        this.areas = areas;
-    }
+
 
     public String getNome() {
         return nome;

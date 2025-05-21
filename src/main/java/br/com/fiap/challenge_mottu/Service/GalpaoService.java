@@ -8,7 +8,9 @@ import br.com.fiap.challenge_mottu.Model.Corredor;
 import br.com.fiap.challenge_mottu.Model.Galpao;
 import br.com.fiap.challenge_mottu.Model.Vagas;
 import br.com.fiap.challenge_mottu.Repository.GalpaoRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GalpaoService
 {
     private final GalpaoRepository galpaoRepository;

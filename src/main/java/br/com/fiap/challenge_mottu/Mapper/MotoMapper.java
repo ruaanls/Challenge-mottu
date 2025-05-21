@@ -3,7 +3,9 @@ package br.com.fiap.challenge_mottu.Mapper;
 import br.com.fiap.challenge_mottu.DTO.MotoRequest;
 import br.com.fiap.challenge_mottu.DTO.MotoResponse;
 import br.com.fiap.challenge_mottu.Model.Moto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MotoMapper
 {
     public Moto requestToMoto(MotoRequest motoRequest)

@@ -8,7 +8,9 @@ import br.com.fiap.challenge_mottu.Model.Vagas;
 import br.com.fiap.challenge_mottu.Repository.MotoRepository;
 import br.com.fiap.challenge_mottu.Repository.VagaRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MotoService
 {
     private final MotoRepository motoRepository;
