@@ -71,6 +71,9 @@ O sistema é modelado com as seguintes entidades principais:
 3.  **Acesse a aplicação:**
     Por padrão, a aplicação estará disponível em `http://localhost:8080`.
 
+4.  **Rode o Arquivo ChallengeMottuApplication.Java:**
+    Esse arquivo faz a aplicação iniciar, se ele não for iniciado as APIs não irão receber a requisição.
+    O caminho do arquivo é: Challenge-mottu\src\main\java\br\com\fiap\challenge_mottu\ChallengeMottuApplication.java
 ## Documentação da API (Swagger)
 
 Após iniciar a aplicação, a documentação interativa da API (Swagger UI) pode ser acessada em:
