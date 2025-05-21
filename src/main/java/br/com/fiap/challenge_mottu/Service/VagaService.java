@@ -33,7 +33,6 @@ public class VagaService
         corredor.setVagasList(vagas); // Atualiza o objeto corredor com uma vaga no banco de dados
         Vagas vagaSalva = vagaRepository.save(vagas);
         return vagaMapper.vagaToResponse(vagaSalva);
-
     }
 
     public VagaResponse readVaga(Long id)
